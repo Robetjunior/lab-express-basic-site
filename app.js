@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.get('/', (req, res) => {
@@ -15,4 +16,4 @@ app.get('/works', (req, res) => {
     res.sendFile(`${__dirname}/views/works.html`)
 })
 
-app.listen(3000, () => console.log(`My first app listening on port 3000!`));
+app.listen(PORT, () => console.log(`My first app listening on port ${PORT}!`));
